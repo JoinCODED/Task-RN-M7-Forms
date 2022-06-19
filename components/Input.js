@@ -2,16 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Input = ({
-  label,
-  iconName,
-  error,
-  password,
-  onFocus = () => {},
-  reference,
-  ...props
-}) => {
-  const [hidePassword, setHidePassword] = useState(password);
+const Input = ({ label, iconName, error, onFocus = () => {}, ...props }) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
@@ -38,15 +29,7 @@ const Input = ({
           secureTextEntry={hidePassword}
           style={styles.input}
           {...props}
-          ref={reference}
         />
-        {password && (
-          <Icon
-            onPress={() => setHidePassword(!hidePassword)}
-            name={hidePassword ? 'eye' : 'eye-slash'}
-            style={styles.passwordIcon}
-          />
-        )}
       </View>
       {error && <Text style={styles.errorText}>{error}</Text>}
     </View>

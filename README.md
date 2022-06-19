@@ -48,6 +48,7 @@ pin: {
 5. Create `handleChange` and `handleError` functions.
 6. Create a `validate` function that calls `yup.validate`.
 7. Pass the `validate` function to the `pay` button.
+8. Pass `handleChange` and `handleError` functions to the `Input` component.
 
 ### 🍋 Pin field
 
